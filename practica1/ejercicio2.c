@@ -16,11 +16,11 @@ const double GASTO_RENTA_LOCAL = 60.00;
 const int DIGITOS[] = {2, 1, 2, 2};
 
 // Imprime el desglose detallado de todos los gastos operativos
-void desgloceGastosOperativos(double totalSueldoEmpleados, double totalElectricidad,
+void desgloseGastosOperativos(double totalSueldoEmpleados, double totalElectricidad,
                               double totalAgua, double totalRenta, double totalGastosOperativos)
 {
     printf("\n========================================\n");
-    printf("    DESGLOCE DE GASTOS OPERATIVOS\n");
+    printf("    DESGLOSE DE GASTOS OPERATIVOS\n");
     printf("========================================\n");
     printf("  Sueldo Empleados: Q.%.2lf x %d = Q.%.2lf\n", GASTO_SUELDO_EMPLEADO, DIGITOS[0], totalSueldoEmpleados);
     printf("  Electricidad:     Q.%.2lf x %d = Q.%.2lf\n", GASTO_ELECTRICIDAD, DIGITOS[1], totalElectricidad);
@@ -32,8 +32,8 @@ void desgloceGastosOperativos(double totalSueldoEmpleados, double totalElectrici
 }
 
 // Calcula el total de gastos operativos multiplicando cada gasto por su dígito correspondiente
-// Parámetro imprimirDesgloce: si es true, muestra el desglose detallado
-double calculoGastosOperativos(bool imprimirDesgloce)
+// Parámetro imprimirDesglose: si es true, muestra el desglose detallado
+double calculoGastosOperativos(bool imprimirDesglose)
 {
     // Calcula cada categoría de gasto
     double totalSueldoEmpleados = GASTO_SUELDO_EMPLEADO * DIGITOS[0];
@@ -45,9 +45,9 @@ double calculoGastosOperativos(bool imprimirDesgloce)
     double totalGastosOperativos = totalSueldoEmpleados + totalElectricidad + totalAgua + totalRenta;
 
     // Muestra el desglose si se solicita
-    if (imprimirDesgloce)
+    if (imprimirDesglose)
     {
-        desgloceGastosOperativos(totalSueldoEmpleados, totalElectricidad, totalAgua, totalRenta, totalGastosOperativos);
+        desgloseGastosOperativos(totalSueldoEmpleados, totalElectricidad, totalAgua, totalRenta, totalGastosOperativos);
     }
     return totalGastosOperativos;
 }
