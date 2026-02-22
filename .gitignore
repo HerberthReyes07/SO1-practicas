@@ -1,0 +1,42 @@
+# Archivos compilados
+*.o
+*.a
+*.so
+*.dylib
+
+# Ejecutables
+ejercicio1
+ejercicio2
+ejercicio3
+*.exe
+*.out
+
+# Archivos de depuración
+*.dSYM/
+*.su
+*.gch
+*.pch
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE/Editor
+.vscode/
+.idea/
+*.code-workspace
+tags
+cscope.*
+
+# Compilación y build
+build/
+dist/
+*.cmake
+CMakeCache.txt
+
+# Temporal
+.tmp/
+*.log
