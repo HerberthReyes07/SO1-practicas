@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <pthread.h>
 #include <unistd.h>
+#include <stdbool.h>
 
 typedef struct
 {
@@ -19,6 +20,29 @@ const int NUMERO_ITERACIONES = 5;
 void pausa(int ms)
 {
 	usleep(ms * 1000);
+}
+
+// Valida que una cadena represente un número válido (entero o decimal)
+// Retorna true si es numérico, false en caso contrario
+// Permite un máximo de un punto decimal
+bool esNumerico(char *str)
+{
+	int puntos = 0; // Contador de puntos decimales
+
+	for (int i = 0; str[i] != '\0'; i++)
+	{
+		if (str[i] == '.')
+		{
+			puntos++;
+			if (puntos > 1) // Rechaza múltiples puntos decimales
+				return false;
+		}
+		else if (str[i] < '0' || str[i] > '9') // Verifica que sea dígito
+		{
+			return false;
+		}
+	}
+	return true;
 }
 
 // Función principal que ejecuta cada hilo (sucursal)
@@ -95,8 +119,21 @@ int leerOpcion(int min, int max)
 	int opcion;
 	do
 	{
+		char input[50]; // Buffer para almacenar la entrada del usuario
 		printf("Seleccione una opcion (%d-%d): ", min, max);
-		scanf("%d", &opcion);
+		scanf("%s", input);
+		if (esNumerico(input))
+		{
+			opcion = atoi(input);
+			if (opcion < min || opcion > max)
+			{
+				printf("Opcion fuera de rango. Intente nuevamente.\n");
+			}
+		}
+		else
+		{
+			printf("Entrada invalida. Por favor, ingrese un numero.\n");
+		}
 	} while (opcion < min || opcion > max);
 	return opcion;
 }
