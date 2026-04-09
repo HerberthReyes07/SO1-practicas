@@ -1,3 +1,7 @@
+# =========================
+# C/C++
+# =========================
+
 # Archivos compilados
 *.o
 *.a
@@ -17,6 +21,25 @@ ejercicio3
 *.gch
 *.pch
 
+
+# =========================
+# Java / Maven / Gradle
+# =========================
+
+# Compilados y empaquetados
+*.class
+*.war
+*.ear
+
+# Build folders
+target/
+out/
+.gradle/
+
+# Logs y volcados
+hs_err_pid*
+replay_pid*
+
 # Sistema operativo
 .DS_Store
 Thumbs.db
@@ -31,6 +54,11 @@ Thumbs.db
 tags
 cscope.*
 
+# Metadatos comunes de Java en IDEs
+.classpath
+.project
+.settings/
+
 # Compilación y build
 build/
 dist/
@@ -39,4 +67,3 @@ CMakeCache.txt
 
 # Temporal
 .tmp/
-*.log
