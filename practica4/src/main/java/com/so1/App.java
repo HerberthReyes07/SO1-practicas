@@ -18,9 +18,9 @@ public class App {
         boolean continuar = true;
 
         while (continuar) {
-            System.out.println("\n====================================");
-            System.out.println("PRACTICA 4 - PROGRAMACION CONCURRENTE");
-            System.out.println("====================================");
+            System.out.println("\n===========================");
+            System.out.println("PRACTICA 4 - SEMÁFOROS");
+            System.out.println("===========================");
             System.out.println("1. Ejercicio 1 - Estacionamiento Inteligente");
             System.out.println("2. Ejercicio 2 - La Mesa");
             System.out.println("3. Salir");
