@@ -26,8 +26,8 @@ public class App {
         int enAire;
 
         while (true) {
-            enTierra = leerEntero(scanner, "¿Cuántos aviones están en tierra (despegando)? ", 0, totalAviones);
-            enAire = leerEntero(scanner, "¿Cuántos aviones están en aire (aterrizando)? ", 0, totalAviones);
+            enTierra = leerEntero(scanner, "¿Cuántos aviones están en tierra (despegando)? ", 1, totalAviones - 1);
+            enAire = leerEntero(scanner, "¿Cuántos aviones están en aire (aterrizando)? ", 1, totalAviones - 1);
 
             if (enTierra + enAire == totalAviones) {
                 break;
